@@ -19,5 +19,5 @@ class apiError extends Error{
         }
     }
 }
-
+//like this we can standardise the errors and simply we can use this util to handle errors 
 export {apiError};

@@ -2,6 +2,7 @@
 //since it is important to give all the env files to the required desitnation before it is executed.
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import {app} from './app.js';
 dotenv.config({
     path:'./env'
 })
