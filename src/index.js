@@ -4,12 +4,12 @@ import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import {app} from './app.js';
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
-
+// console.log(process.env.MONGODB_URL);
 connectDB()
 .then(()=>{
-    app.on((error)=>{
+    app.on('error',(error)=>{
         console.log("error encountered: ",error);
     });
     app.listen(process.env.PORT,()=>{
@@ -18,10 +18,9 @@ connectDB()
     })
 })
 .catch((error)=>{
-    console.log(`error in connection of DB: ${error}`);
+    console.log(`error in connection of index.js file in src: ${error}`);
     
 })
-
 // this is the process to connect db and run api servers here only
 // import express from "express";
 // const app = express()
